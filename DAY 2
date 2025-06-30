@@ -1,0 +1,74 @@
+##  STACK IN JAVA
+
+import java.util.*;
+public class DSA{
+    public static void main(String[] args) {
+        Stack<Integer> A = new Stack<>();
+        A.push(1);
+        A.push(2);
+        A.push(3);
+        A.push(4);
+        while(!A.isEmpty()){
+            System.out.print("Stack : "+A.pop());
+        }
+    }
+}
+##  QUEUE IN JAVA
+
+import java.util.*;
+public class DSA{
+    public static void main(String[] args) {
+        Queue<String> A = new LinkedList<>();
+        A.add("apple");
+        A.add("banana");
+        A.add("cherry");
+        System.out.println(" Queue : "+A); 
+        String str = A.remove();      
+        System.out.println("removed element : "+str);
+        A.add("dragon fruit");
+        System.out.println("Queue after adding the element : "+A);
+        System.out.println("print head and remove head element for the Queue : "+A.poll()); 
+        System.out.println("Queue : "+A);       
+        System.out.println("Head of the Queue : "+A.peek());
+        System.out.println("Final Queue : "+ A);
+    }
+}
+
+##  PRIORITYQUEUE IN JAVA 
+
+import java.util.*;
+public class DSA{
+    public static void main(String[] args) {
+        Queue<Integer> A = new LinkedList<>();
+        A.add(10);
+        A.add(20);
+        A.add(30);
+        A.add(15);
+        System.out.println("priority Queue : "+A);       
+        System.out.println("print Head of the Queue : "+A.peek());
+        System.out.println("print head and remove head element for the Queue : "+A.poll()); 
+        System.out.println("Queue : "+A);       
+        System.out.println("Head of the Queue : "+A.peek()); 
+
+    }
+}
+
+##  PRIORITY BLOCKING QUEUE
+
+import java.util.*;
+import java.util.concurrent.*;
+public class DSA{
+    public static void main(String[] args) {
+        Queue<Integer> A = new PriorityBlockingQueue<Integer>();
+        A.add(10);
+        A.add(20);
+        A.add(30);
+        A.add(15);
+        System.out.println("priority Blocking Queue : "+A);       
+        System.out.println("print Head of the Queue : "+A.peek());
+        System.out.println("print head and remove head element for the Queue : "+A.poll()); 
+        System.out.println("Queue : "+A);       
+        System.out.println("Head of the Queue : "+A.peek()); 
+
+    }
+}
