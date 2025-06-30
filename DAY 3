@@ -1,0 +1,48 @@
+##  LINKEDLIST IN JAVA
+
+import java.util.*;
+public class DSA{
+    public static void main(String[] args) {
+        LinkedList<String> A = new LinkedList<>();
+        A.add("one");
+        A.add("two");
+        A.add("three");
+        A.add("four");
+        A.addFirst("Zero");
+        A.addLast("Infinity");
+        System.out.println("LinkedList : "+A);
+        A.remove(0);
+        System.out.println("LinkedList after removing the first element : "+A);
+        A.set(2,"3");
+        System.out.println("Linkedlist after replacing the third elemrnt : "+ A);
+        Object obj = A.toArray();
+        System.out.print(" LinkedList converted to array : ");
+        for(Object Element : A)
+            System.out.print(Element +" ");
+        System.out.println(" ");
+        System.out.println("Size of the LinkedList : "+A.size());
+    }
+}
+
+## LINEARSEARCH IN JAVA
+
+public class DSA{
+    public static int search(int arr[],int N,int X){
+        for(int i=0;i<N;i++){
+            if(arr[i]==X)
+                return i;
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        int arr[] ={2,4,56,6,7,8,43};
+        int X = 6;
+        int result = search(arr,arr.length,X);
+        if(result == -1){
+            System.out.println("Element is Not found ");
+        }else{
+            System.out.println("Element found at the index :"+result);
+        }
+    }
+}
+
