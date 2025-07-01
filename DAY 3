@@ -46,3 +46,27 @@ public class DSA{
     }
 }
 
+## Second Largest Element in an Array
+
+import java.util.*;
+public class DSA{
+    public static int SD(int[] arr){
+        int n = arr.length;
+        Arrays.sort(arr);        
+        for(int i=n-2;i>=0;i--){
+            if(arr[i]!=arr[n-1]){
+                return arr[i];
+            }
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        int[] arr = {3,7,8,9,6,58,76};
+        int result = SD(arr);
+        if(result== -1){
+            System.out.println("Element is Not found");
+        }else{
+            System.out.println("Second Largest Element is : " + result);
+        }   
+    }
+}
