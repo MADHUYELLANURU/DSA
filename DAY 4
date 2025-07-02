@@ -47,3 +47,36 @@ public class DSA{
         System.out.print(num + " ");
     }
 }
+
+## BINARY SEARCH
+
+public class DSA{
+    public static int Binarysearch(int[] arr, int X){
+        int n = arr.length;
+        int low = 0;
+        int high = n-1;
+        while(low<=high){
+            int mid= low + (high-low)/2;
+            if(arr[mid] == X){
+                return mid;
+            }
+            if(arr[mid]<X){
+                low = mid+1;
+            }else{
+                high = mid-1;
+            }
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        DSA  obj = new DSA();
+        int[] arr = {2,3,4,5,78,79,91};
+        int X = 78;
+        int result = obj.Binarysearch(arr, X);
+        if(result == -1){
+            System.out.println("Element Not Found");
+        }else{
+            System.out.println("Element Found at Index : "+ result);
+        }
+    }
+}
