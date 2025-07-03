@@ -1,0 +1,55 @@
+##  Check if an Array is Sorted
+
+public class DSA{
+    public static boolean SortedArray(int[] arr,int n){
+        if(n==0 || n==1)
+        return true;
+        for(int i=1;i<n;i++){
+            if(arr[i-1]>arr[i])
+            return false;
+        }
+    return true;
+    }
+    public static void main(String[] args) {
+        int[] arr ={1,2,34,5,6,7,7,8};
+        int n = arr.length;
+        if(SortedArray(arr, n))
+            System.out.println("It is a sorted Array\n");
+        else
+            System.out.println("It is not a sorted Array\n");
+    }
+}
+
+##  Recursive approach for Check if an Array is Sorted
+
+public class DSA{
+    public static boolean SortedArray(int[] arr,int n){
+        if(n==0 || n==1)
+        return true;
+        
+        return arr[n-1]>=arr[n-2] && SortedArray(arr,n-1);
+    }
+    public static void main(String[] args) {
+        int[] arr ={1,2,34,5,6,7,7,8};
+        int n = arr.length;
+        if(SortedArray(arr, n))
+            System.out.println("It is a sorted Array\n");
+        else
+            System.out.println("It is not a sorted Array\n");
+    }
+}
+
+##  Sorted Array
+
+import java.util.Arrays;
+
+public class DSA{
+    public static void main(String[] args){
+        String S = "GoodMorning";
+        char[] charArray = S.toCharArray();
+        Arrays.sort(charArray);
+         S = new String(charArray);
+
+         System.out.println("Sorted Array : "+ S);
+    }
+}
