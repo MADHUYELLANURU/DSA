@@ -1,0 +1,60 @@
+## Row wise matrix  sorting
+
+import java.util.Arrays;
+public class DSA{
+    public static void SortMat(int[][] M){
+        for(int[] row : M){
+            Arrays.sort(row);
+        }
+    }
+    public static void main(String[] args) {
+        int[][] M = {{21,23,12,2},{54,43,23,1},{45,34,24,32},{76,65,54,43}};
+        SortMat(M);
+        System.out.println("[");
+        for(int i=0;i<M.length;i++){
+            System.out.print("  [");
+            for(int j=0;j<M[i].length;j++){
+                System.out.print(M[i][j]+" ");
+            }
+            System.out.print("]");
+            System.out.println(" ");
+        }
+        System.out.println("]");
+    }
+}
+
+##  Entire matrix in ascending order
+
+
+import java.util.Arrays;
+public class DSA{
+    public static void SortWholeMat(int[][] M){
+        int row = M.length;
+        int cols = M[0].length;
+        int[] NewMat = new int[row*cols];
+        int K=0;
+        for(int i=0;i<M.length;i++){
+            for(int j=0;j<M[0].length;j++){
+                NewMat[K++]=M[i][j];
+            }
+        }
+        Arrays.sort(NewMat);
+        K=0;
+        for(int i=0;i<M.length;i++){
+            for(int j=0;j<M[0].length;j++){
+                M[i][j]=NewMat[K++];
+            }
+        }
+    }
+    public static void main(String[] args){
+        int[][] M={{32,12,2,4},{65,45,34,76},{65,54,43,23},{67,89,46,3}};
+        SortWholeMat(M);
+        for(int i=0;i<M.length;i++){
+            System.out.print("[");
+            for(int j=0;j<M[0].length;j++){
+                System.out.print(M[i][j] + " ");
+            }
+            System.out.println("]");
+        }
+    }
+}
