@@ -1,0 +1,51 @@
+##  TwoPointerTwoSumSorted
+
+public class TwoSumArray {
+    public static boolean TwoSum(int[] arr,int target){
+        int n = arr.length;
+        int left =0,right=n-1;
+        while(left<right){
+            int sum = arr[left]+arr[right];
+            if(sum == target){
+                return true;
+            }
+            if(sum<target)
+                left++;
+            else
+            right--;
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5,6,7};
+        int target = 9;
+        if(TwoSum(arr, target)){
+            System.out.println("True");
+        }else{
+            System.out.println("False");
+        }
+    }  
+}
+## PrefixSum In Java
+
+
+import java.util.*;
+public class prefixSum {
+    public static  ArrayList<Integer> prefSum(int[] arr){
+        int n = arr.length;
+        ArrayList<Integer> prefixsum = new ArrayList<>();
+        prefixsum.add(arr[0]);
+        for(int i=1;i<n;i++){
+            prefixsum.add(prefixsum.get(i-1)+arr[i]);
+        }
+        return prefixsum;
+
+    }
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        ArrayList<Integer> prefixSum = prefSum(arr);
+        for(int i : prefixSum){
+            System.out.print(i + " ");
+        }
+    }
+}
