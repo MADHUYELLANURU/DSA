@@ -1,0 +1,43 @@
+##  Maximum Sum of a Sub Array with K Elements
+
+public class MaximumSumofaSubarraywithKElements {
+    public static int MaxSubArrSum(int[]arr,int n ,int k){
+        int max_Sum = Integer.MIN_VALUE;
+        for(int i=0;i<n-k+1;i++){
+            int currentSum =0;
+            for(int j=0;j<k;j++){
+                currentSum += arr[i+j];
+                max_Sum = Math.max(currentSum,max_Sum);
+            }
+        }
+        return max_Sum;
+    }
+    public static void main(String[] args){
+        int[] arr = {1, 2, 3, 4, 5};
+        int n = arr.length;
+        int k =3;
+        System.out.println(MaxSubArrSum(arr,n,k));
+    }
+}
+
+## LINKEDLIST IN JAVA
+
+public class MaximumSumofaSubarraywithKElements {
+    public static int MaxSubArrSum(int[]arr,int n ,int k){
+        int max_Sum = Integer.MIN_VALUE;
+        for(int i=0;i<n-k+1;i++){
+            int currentSum =0;
+            for(int j=0;j<k;j++){
+                currentSum += arr[i+j];
+                max_Sum = Math.max(currentSum,max_Sum);
+            }
+        }
+        return max_Sum;
+    }
+    public static void main(String[] args){
+        int[] arr = {1, 2, 3, 4, 5};
+        int n = arr.length;
+        int k =3;
+        System.out.println(MaxSubArrSum(arr,n,k));
+    }
+}
