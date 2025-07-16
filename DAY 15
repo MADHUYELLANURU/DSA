@@ -1,0 +1,72 @@
+##   ArrayListOperations searching,insertion,deletion
+
+/*Complete the function(s) below*/
+import java.util.*;
+//import java.util.*;
+class Solution {
+    public boolean searchEle(List<Integer> arr, int x) {
+        // add code here.
+        for(int i=0;i<arr.size();i++){
+            if(arr.get(i)== x)
+                return true;
+        }
+            return false;
+    }
+
+    public boolean insertEle(List<Integer> arr, int y, int yi) {
+        // add code here
+        if(yi>=0 && yi<=arr.size()){
+            arr.add(yi,y);
+            return true;
+        }
+        return false;
+        
+    }
+
+    public boolean deleteEle(List<Integer> arr, int z) {
+        // add code here.
+        return arr.remove((Integer) z);
+    }
+    public static void main(String[] args){
+        List<Integer> arr = new ArrayList<>(Arrays.asList(2,4,1,0,2));
+        Solution sol = new Solution();
+        int x=1,y=2,yi=2,z=0;
+        
+        System.out.print(sol.searchEle(arr,x)+ " ");
+        System.out.print(sol.insertEle(arr,y,yi)+ " ");
+        System.out.print(sol.deleteEle(arr,z)+ " ");
+        System.out.println(" ");
+        
+        List<Integer> arr1 = new ArrayList<>(Arrays.asList(17,15,8,9,12));
+        int x1=10,y1=6,yi1=2,z1=5;
+        
+        System.out.print(sol.searchEle(arr1,x1)+ " ");
+        System.out.print(sol.insertEle(arr1,y1,yi1)+" ");
+        System.out.print(sol.deleteEle(arr1,z1)+" ");
+        
+        
+    }
+}
+
+output : true true true  
+false true false 
+
+## Alternate Elements printing in a array
+
+import java.util.*;
+class AlternateEle {
+    public static   ArrayList<Integer> getAlternates(int arr[]) {
+
+        ArrayList<Integer> result = new ArrayList<>();
+        for(int i=0;i<arr.length;i+=2){
+                result.add(arr[i]);
+            
+        }
+        return result;
+    }
+    public static void main(String[] args){
+        AlternateEle sol = new AlternateEle();
+        int[] arr ={1,2,3,4};
+        System.out.println(sol.getAlternates(arr)+" ");
+    }
+}
