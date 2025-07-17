@@ -1,0 +1,73 @@
+## NUMBER OF SUB PALINDROME STRINGS IN A STRING
+
+class SubStringpal {
+   SubStringpal() {
+   }
+
+   static boolean isPalindrome(String var0, int var1, int var2) {
+      while(var1 < var2) {
+         if (var0.charAt(var1) != var0.charAt(var2)) {
+            return false;
+         }
+
+         ++var1;
+         --var2;
+      }
+
+      return true;
+   }
+
+   static int countPS(String var0) {
+      int var1 = var0.length();
+      int var2 = 0;
+
+      for(int var3 = 0; var3 < var1; ++var3) {
+         for(int var4 = var3 + 1; var4 < var1; ++var4) {
+            if (isPalindrome(var0, var3, var4)) {
+               ++var2;
+            }
+         }
+      }
+
+      return var2;
+   }
+
+   public static void main(String[] var0) {
+      String var1 = "abaab";
+      System.out.println(countPS(var1));
+   }
+}
+
+
+##   DUPLICATES IN A ARRAY
+
+import java.util.*;
+class duplicates {
+    static List<Integer> findDuplicates(Integer[] arr) {
+        int n = arr.length;
+        Map<Integer, Integer> freqMap = new HashMap<>();
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            freqMap.put(arr[i],
+                        freqMap.getOrDefault(arr[i], 0)
+                            + 1);
+        }
+        for (Map.Entry<Integer, Integer> entry :
+             freqMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                result.add(entry.getKey());
+            }
+        }
+        if (result.isEmpty()) {
+            result.add(-1);
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+        Integer[] arr = { 1, 6, 5, 2, 3, 3, 2 };
+        List<Integer> duplicates = findDuplicates(arr);
+        for (int element : duplicates) {
+            System.out.print(element + " ");
+        }
+    }
+}
