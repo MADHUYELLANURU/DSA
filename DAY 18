@@ -1,0 +1,43 @@
+##   NextGreatest Element in a Array
+
+import java.util.*;
+public class GreatestEle{
+    public static ArrayList<Integer> NextGreatestElement(int[] arr){
+        int n = arr.length;
+
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        for(int i=0;i<n;i++){
+            result.add(-1);
+        }
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(arr[j]>arr[i]){
+                    result.set(i,arr[j]);
+                }
+            }
+        }
+        return result;
+    }
+    public static void main(String[] args){
+        int[] arr = {7,2,3,8,4,1};
+        ArrayList<Integer> result = NextGreatestElement(arr);
+        for(int i : result){
+            System.out.print(i + " ");
+        }
+    }
+}
+
+##  Kth Smallest Element in a Array
+
+import java.util.*;
+public class KthSmallestElement {
+    public static int KthsmallestElement(int[] arr, int K){
+        Arrays.sort(arr);
+        return arr[K-1];
+    }
+    public static void main(String[] args){
+        int[] arr = {7,8,3,4,5,2,1};
+        int K = 7;
+        System.out.println("Kth Smallest Element is : "+KthsmallestElement(arr, K));
+    }  
+}
