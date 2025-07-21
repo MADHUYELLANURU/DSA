@@ -1,0 +1,70 @@
+##  Peak Element in Array
+
+public class peakEle{
+    public static int PeakIndex(int[] arr){
+        int n = arr.length;
+        for(int i=1;i<n-1;i++){
+            if(arr[i]>=arr[i-1]&& arr[i]>=arr[i+1]){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static void main(String[] args){
+        int[] arr= {1,2,3,4,5,6,7,8,3};
+        System.out.println("The peak element is located at index: "+PeakIndex(arr));
+    }
+}
+
+## Missing Numbers in a Array
+
+public class missingNum{
+    public static int MissingNum(int[] arr){
+        int n = arr.length;
+        boolean found ;
+        for(int i=1;i<n+1;i++){
+            found = false;
+            for(int j=0;j<n;j++){
+                if(arr[j]==i){
+                    found =true;
+                }
+            }
+            if(!found){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static void main(String[] args){
+        int[] arr = {2,3,5,1,6,7,8};
+        System.out.println("Missing Number in the Array : "+MissingNum(arr));
+    }   
+}
+##  3 Sum - Find All Triplets with Zero Sum
+
+import java.util.*;
+public class ZeroSum {
+    public static ArrayList<ArrayList<Integer>> triplets(int[] arr){
+        int n = arr.length;
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        for(int i=0;i<n-2;i++){
+            for(int j=i+1;j<n-1;j++){
+                for(int k=j+1;k<n;k++){
+                    if(arr[i]+arr[j]+arr[k]==0){
+                        ArrayList<Integer> Triplet = new ArrayList<>();
+                        Triplet.add(i);
+                        Triplet.add(j);
+                        Triplet.add(k);
+                        result.add(Triplet);
+                    }
+                }
+            }
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+        int[] arr={1,0,-1,3,-2,1};
+        ArrayList<ArrayList<Integer>> result = triplets(arr);
+            System.out.println(result.get(0)+" "+result.get(1)+" "+result.get(2));
+    }
+}
