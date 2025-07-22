@@ -1,0 +1,45 @@
+##  Max Repeating Char in a String 
+
+class MaxRepeatingChar{
+    static char maxRepeating(String s) {
+        int n = s.length();
+        int maxCnt = 0;
+        char res = s.charAt(0);
+        for (int i = 0; i < n; i++) {
+            int cnt = 0;
+            for (int j = i; j < n; j++) {
+                if (s.charAt(i) != s.charAt(j))
+                    break;
+                cnt++;
+            }
+            if (cnt > maxCnt) {
+                maxCnt = cnt;
+                res = s.charAt(i);
+            }
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        String s = "aaaabbaaccde";
+        System.out.println("Max Repeating Char is : "+maxRepeating(s));
+    }
+}
+##  Anagram Check 
+
+import java.util.Arrays;
+public class AnagramCheck {
+    public static boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) return false;
+        char[] a = s.toCharArray();
+        char[] b = t.toCharArray();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        return Arrays.equals(a, b);
+    }
+
+    public static void main(String[] args) {
+        String s1 = "listen";
+        String s2 = "silent";
+        System.out.println("Are anagrams? " + isAnagram(s1, s2));
+    }
+}
