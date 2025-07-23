@@ -1,0 +1,51 @@
+## FIND MAXIMUM COINS 
+
+public class FindMaxCoins {
+    public static int MaxCoins(int[] arr, int n){
+        int count =0;
+        for(int i=arr.length-1;i>=0;i--){
+            while(n>=arr[i]){
+                n-=arr[i];
+                count++;
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        int[] arr = {1,2,5,10};
+        int n = 39;
+        System.out.println("No.Of Coins : "+MaxCoins(arr, n));
+    }
+    
+}
+
+
+##   MOVE ALL ZEROS TO END 
+
+public class MoveZerosToEnd {
+    public static void moveZeros(int[] arr) {
+        int n = arr.length;
+        int index = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                arr[index++] = arr[i];
+            }
+        }
+        while (index < n) {
+            arr[index++] = 0;
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr = {0, 1, 0, 3, 12};
+        System.out.print("Before: ");
+        printArray(arr);
+        moveZeros(arr);
+        System.out.print("After:  ");
+        printArray(arr);
+    }
+    public static void printArray(int[] arr) {
+        for (int num : arr)
+            System.out.print(num + " ");
+        System.out.println();
+    }
+}
