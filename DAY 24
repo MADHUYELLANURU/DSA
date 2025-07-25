@@ -1,0 +1,77 @@
+## DELETING MID ELEMENT IN A ARRAY USING STACK
+
+import java.util.ArrayList;
+import java.util.Stack;
+
+public class DeleteMid {
+   public DeleteMid() {
+   }
+
+   public static void deletemid(Stack<Integer> var0, int var1) {
+      ArrayList var2 = new ArrayList();
+
+      while(!var0.isEmpty()) {
+         var2.add((Integer)var0.pop());
+      }
+
+      int var3 = var1 / 2;
+      var2.remove(var3);
+
+      for(int var4 = var2.size() - 1; var4 >= 0; --var4) {
+         var0.push((Integer)var2.get(var4));
+      }
+
+   }
+
+   public static void main(String[] var0) {
+      Stack var1 = new Stack();
+      var1.push(10);
+      var1.push(20);
+      var1.push(30);
+      var1.push(40);
+      var1.push(50);
+      var1.push(60);
+      int var2 = var1.size();
+      deletemid(var1, var2);
+
+      while(!var1.isEmpty()) {
+         int var3 = (Integer)var1.pop();
+         System.out.print("" + var3 + " ");
+      }
+
+   }
+}
+
+
+##  BALANCED bRACKETS 
+
+import java.util.Stack;
+public class BalancedBrackets {
+    public static boolean isBalanced(String str) {
+        Stack<Character> stack = new Stack<>();
+        for (char ch : str.toCharArray()) {
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack.push(ch);
+            }
+            else if (ch == ')' || ch == '}' || ch == ']') {
+                if (stack.isEmpty()) return false;
+                char top = stack.pop();
+                if ((ch == ')' && top != '(') ||
+                    (ch == '}' && top != '{') ||
+                    (ch == ']' && top != '[')) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+    public static void main(String[] args) {
+        String input = "({[]})";
+
+        if (isBalanced(input)) {
+            System.out.println("Balanced");
+        } else {
+            System.out.println("Not Balanced");
+        }
+    }
+}
