@@ -1,4 +1,4 @@
-## DELETING MID ELEMENT IN A ARRAY USING STACK
+## DELETING MID ELEMENT IN A ARRAY IN STACK
 
 import java.util.ArrayList;
 import java.util.Stack;
