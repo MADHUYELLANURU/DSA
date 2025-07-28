@@ -1,0 +1,41 @@
+## GCD
+
+public class GCD {
+    public static int findGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+    public static void main(String[] args) {
+        int a = 36, b = 60;
+        System.out.println("GCD of " + a + " and " + b + " is: " + findGCD(a, b));
+    }
+}
+
+
+## Java Code to Compute LCM
+
+public class LCM{
+    public static int computeGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+    public static int computeLCM(int a, int b) {
+        int gcd = computeGCD(a, b);
+        return (a * b) / gcd;
+    }
+    public static void main(String[] args) {
+        int a = 15;
+        int b = 20;
+
+        int lcm = computeLCM(a, b);
+        System.out.println("LCM of " + a + " and " + b + " is: " + lcm);
+    }
+}
