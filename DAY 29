@@ -1,0 +1,52 @@
+## Java program to calculate nPr (permutation)
+
+import java.util.Scanner;
+public class PermutationCal{
+    public static int factorial(int num){
+        int fac=1;
+        for(int i=1;i<=num;i++){
+            fac *=i;
+        }
+        return fac;
+    }
+    static long npr(int n,int r){
+        return factorial(n)/factorial(n-r);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n : ");
+        int n = sc.nextInt();
+        System.out.print("Enter r : ");
+        int r = sc.nextInt();
+        if(n<r||r<0||n<0){
+            System.out.println("Invalid input");
+        }else 
+            System.out.print("npr  : "+npr(n,r));
+    }
+}
+##  Java program to calculate nCr (permutation)
+
+import java.util.Scanner;
+public class PermutationCal{
+    public static int factorial(int num){
+        int fac=1;
+        for(int i=1;i<=num;i++){
+            fac *=i;
+        }
+        return fac;
+    }
+    static long nCr(int n,int r){
+        return factorial(n)/(factorial(n-r)*factorial(r));
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n : ");
+        int n = sc.nextInt();
+        System.out.print("Enter r : ");
+        int r = sc.nextInt();
+        if(n<r||r<0||n<0){
+            System.out.println("Invalid input");
+        }else 
+            System.out.print("nCr  : "+nCr(n,r));
+    }
+}
