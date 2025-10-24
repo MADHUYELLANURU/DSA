@@ -24,4 +24,31 @@ public class Main{
         }
         System.out.print(sum);
     }
+Printing the rept element in a arr form the last index;
+
+import java.util.*;
+public class Main{
+    public static void reparr(int[] arr){
+        int n = arr.length;
+        int rept=-1;
+        HashSet<Integer> set = new HashSet<>();
+        for(int i=n-1;i>=0;i--){
+            if(set.contains(arr[i])){
+                rept=arr[i];
+                break;
+            }else{
+                set.add(arr[i]);
+            }
+        }
+        if(rept !=-1){
+            System.out.print(rept);
+        }else{
+            System.out.print("no rept elements are there");
+        }
+    }
+    public static void main(String[] args){
+        int[] arr={1,2,34,5,6,2,7,8,9};
+        reparr(arr);
+    }
+}
 }
